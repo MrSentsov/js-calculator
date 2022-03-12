@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <title>Basic Calculator</title>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
     <link href="style.css" rel="stylesheet">
     <script src="script.js" defer></script>
-</head>
-<body>
-<div class="calculator-grid">
+  </head>
+  <body>
+    <div class="calculator-grid">
     <div class="output">
-        <div data-previous-opperand class="previous-opperand">0</div>
-        <div data-current-opperand class="current-opperand">0</div>
+    <div data-previous-operand class="previous-operand"></div>
+    <div data-current-operand class="current-operand"></div>
     </div>
     <button data-all-clear class="span-two">AC</button>
     <button data-delete>DEL</button>
@@ -22,7 +22,7 @@
     <button data-number>4</button>
     <button data-number>5</button>
     <button data-number>6</button>
-    <button data-number>+</button>
+    <button data-operation>+</button>
     <button data-number>7</button>
     <button data-number>8</button>
     <button data-number>9</button>
@@ -30,7 +30,8 @@
     <button data-number>.</button>
     <button data-number>0</button>
     <button data-equals class="span-two">=</button>
-</div>
 
-</body>
+    </div>
+
+  </body>
 </html>
