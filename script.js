@@ -11,7 +11,7 @@ class Calculator {
       this.operation = undefined
     }
   
-    delete() {
+    deletetion() {
       this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
   
@@ -20,17 +20,17 @@ class Calculator {
       this.currentOperand = this.currentOperand.toString() + number.toString()
     }
   
-    chooseOperation(operation) {
+    operationChoice(operation) {
       if (this.currentOperand === '') return
       if (this.previousOperand !== '') {
-        this.compute()
+        this.computation()
       }
       this.operation = operation
       this.previousOperand = this.currentOperand
       this.currentOperand = ''
     }
   
-    compute() {
+    computation() {
       let computation
       const prev = parseFloat(this.previousOperand)
       const current = parseFloat(this.currentOperand)
@@ -105,13 +105,13 @@ class Calculator {
   
   operationButtons.forEach(button => {
     button.addEventListener('click', () => {
-      calculator.chooseOperation(button.innerText)
+      calculator.operationChoice(button.innerText)
       calculator.updateDisplay()
     })
   })
   
   equalsButton.addEventListener('click', button => {
-    calculator.compute()
+    calculator.computation()
     calculator.updateDisplay()
   })
   
@@ -121,7 +121,7 @@ class Calculator {
   })
   
   deleteButton.addEventListener('click', button => {
-    calculator.delete()
+    calculator.deletetion()
     calculator.updateDisplay()
   })
   
@@ -140,17 +140,17 @@ class Calculator {
     }
     if (event.key.match(patternForOperators)) {
       event.preventDefault();
-      calculator.chooseOperation(event.key)
+      calculator.operationChoice(event.key)
       calculator.updateDisplay()
     }
     if (event.key === 'Enter' || event.key === '=') {
       event.preventDefault();
-      calculator.compute()
+      calculator.computation()
       calculator.updateDisplay()
     }
     if (event.key === "Backspace") {
       event.preventDefault();
-      calculator.delete()
+      calculator.deletetion()
       calculator.updateDisplay()
     }
     if (event.key == 'Delete') {
